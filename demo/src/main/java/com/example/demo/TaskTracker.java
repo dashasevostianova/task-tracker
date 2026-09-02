@@ -20,9 +20,15 @@ public class TaskTracker implements Runnable{
 	//@Option - no matter when we put needed command
 	@Option(names = {"-p", "--priority"}, description = "assigns priorities")
 	private Priority priority = Priority.MEDIUM;
-	
-	public static void main(String[] args) {
 
+	public static void main(String[] args) {
+		//args to obj, calls run()
+		int exitCode = new CommandLine(new TaskTracker()).execute(args);
+		 System.exit(exitCode);
 	}
 
+	@Override
+	public void run() {
+		
+	}
 }
