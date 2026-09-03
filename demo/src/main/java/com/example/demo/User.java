@@ -47,4 +47,26 @@ public class User {
         }
     }
 
+    public void markInProgress(int id) {
+        int i = findTask(id);
+        if (i != -1) {
+            Task t = tasks.get(i);
+            t.setStatus(Status.INPROGRESS);;
+        }
+        else {
+            System.out.println("This id is invalid");
+        }
+    }
+
+    public void markDone(int id) {
+        int i = findTask(id);
+        if (i != -1) {
+            Task t = tasks.get(i);
+            t.setStatus(Status.DONE);;
+        }
+        else {
+            System.out.println("This id is invalid");
+        }
+    }
+
 }
