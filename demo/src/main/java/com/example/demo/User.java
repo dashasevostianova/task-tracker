@@ -1,6 +1,4 @@
 package com.example.demo;
-import static org.mockito.Mockito.description;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,9 +9,10 @@ public class User {
     public User() {
     }
 
-    public void add (String description) {
+    public int add (String description) {
         tasks.add(new Task(id, description, Status.TODO));
         id++;
+        return id-1;
     }
 
     private int findTask(int id) {
@@ -69,12 +68,26 @@ public class User {
         }
     }
 
+    public List<Task> list() {
+        System.out.println("The list of all tasks:");
+        Task t;
+        for (int i = 0; i < tasks.size(); i++) {
+            t = tasks.get(i);
+             System.out.println("    Tsk ID: " + i +
+                    ", description: " + t.getDescription() + " , status: " +
+                    t.getStatus());
+        }
+        return tasks;
+    }
     public List<Task> listDone(){
+        System.out.println("The list of completed tasks:");
         List<Task> done = new ArrayList<>();
         Task t;
         for (int i = 0; i < tasks.size(); i++) {
             t = tasks.get(i);
             if (t.getStatus() == Status.DONE) {
+                System.out.println("    Tsk ID: " + i +
+                    ", description: " + t.getDescription());
                 done.add(t);
             }
         }
@@ -82,11 +95,14 @@ public class User {
     }
 
     public List<Task> listToDo(){
+        System.out.println("The list of tasks to do:");
         List<Task> toDo = new ArrayList<>();
         Task t;
         for (int i = 0; i < tasks.size(); i++) {
             t = tasks.get(i);
             if (t.getStatus() == Status.TODO) {
+                System.out.println("    Tsk ID: " + i +
+                    ", description: " + t.getDescription());
                 toDo.add(t);
             }
         }
@@ -94,11 +110,14 @@ public class User {
     }
 
     public List<Task> listInProgress(){
+        System.out.println("The list of tasks in progress:");
         List<Task> inProgress = new ArrayList<>();
         Task t;
         for (int i = 0; i < tasks.size(); i++) {
             t = tasks.get(i);
             if (t.getStatus() == Status.INPROGRESS) {
+                System.out.println("    Tsk ID: " + i +
+                    ", description: " + t.getDescription());
                 inProgress.add(t);
             }
         }
