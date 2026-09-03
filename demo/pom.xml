@@ -44,8 +44,9 @@
 		<dependency>
 			<groupId>info.picocli</groupId>
 			<artifactId>picocli</artifactId>
-			<version>4.7.5</version>
+			<version>4.6.3</version>
 		</dependency>
+
 
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>

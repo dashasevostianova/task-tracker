@@ -8,7 +8,7 @@ enum Priority {
 	HIGH, MEDIUM, LOW
 }
 
-@Command(name = "task-cli", mixinStandartHelpOptions = true, version = "1.0", description = "bebbe")
+@Command(name = "task-cli", mixinStandardHelpOptions = true, version = "1.0", description = "bebbe")
 public class TaskTracker implements Runnable{
 	@Parameters(index = "0")
 	private String command;
@@ -29,6 +29,6 @@ public class TaskTracker implements Runnable{
 
 	@Override
 	public void run() {
-		
+
 	}
 }

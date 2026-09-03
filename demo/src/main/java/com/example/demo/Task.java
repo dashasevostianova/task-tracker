@@ -25,10 +25,6 @@ public class Task {
         return this.id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getDescription() {
         return this.description;
     }
