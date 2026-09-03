@@ -69,4 +69,39 @@ public class User {
         }
     }
 
+    public List<Task> listDone(){
+        List<Task> done = new ArrayList<>();
+        Task t;
+        for (int i = 0; i < tasks.size(); i++) {
+            t = tasks.get(i);
+            if (t.getStatus() == Status.DONE) {
+                done.add(t);
+            }
+        }
+        return done;
+    }
+
+    public List<Task> listToDo(){
+        List<Task> toDo = new ArrayList<>();
+        Task t;
+        for (int i = 0; i < tasks.size(); i++) {
+            t = tasks.get(i);
+            if (t.getStatus() == Status.TODO) {
+                toDo.add(t);
+            }
+        }
+        return toDo;
+    }
+
+    public List<Task> listInProgress(){
+        List<Task> inProgress = new ArrayList<>();
+        Task t;
+        for (int i = 0; i < tasks.size(); i++) {
+            t = tasks.get(i);
+            if (t.getStatus() == Status.INPROGRESS) {
+                inProgress.add(t);
+            }
+        }
+        return inProgress;
+    }
 }
