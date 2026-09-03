@@ -3,10 +3,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-    private static int id = 0;
+    private int id;
     private List<Task> tasks = new ArrayList<>();
 
     public User() {
+        id = 0;
     }
 
     public int add (String description) {
@@ -123,4 +124,21 @@ public class User {
         }
         return inProgress;
     }
+
+    public List<Task> getTasks() {
+        return this.tasks;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 }
